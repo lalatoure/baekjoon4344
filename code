@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main(void) {
+	int C;
+	int N;
+	int count = 0;
+	int arr[1000] = { 0 };
+	int sum = 0;
+	double avg=0;
+	double result;
+	scanf("%d", &C);
+	for (int i = 0; i < C; i++) {
+		scanf("%d", &N);
+		for (int j = 0; j < N; j++) {
+			scanf("%d", &arr[j]);
+			sum += arr[j];
+		}avg = sum / N;
+		for (int k = 0; k < N; k++) {
+			if (arr[k] > avg)
+				count++;
+		}
+		result = (double)count / N * 100;
+		printf("%.3f%%\n", result);
+		sum = 0;
+		avg = 0;
+		count = 0;
+		result = 0;
+	}
+}
